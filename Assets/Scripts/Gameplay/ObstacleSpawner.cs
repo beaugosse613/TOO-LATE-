@@ -19,9 +19,6 @@ public class ObstacleSpawner : MonoBehaviour
 
     public static ObstacleSpawner Instance;
 
-    // Shared with GroundScroller and ParallaxScroller for speed sync
-    public static float DifficultyPercent { get; private set; }
-
     private ObjectPool<GameObject>[] _pools;
     private Coroutine _spawnCoroutine;
 
@@ -67,21 +64,14 @@ public class ObstacleSpawner : MonoBehaviour
     {
         while (true)
         {
-            UpdateDifficulty();
-
-            float minDelay = Mathf.Max(Mathf.Lerp(startMinDelay, hardestMinDelay, DifficultyPercent), absoluteMinDelay);
-            float maxDelay = Mathf.Max(Mathf.Lerp(startMaxDelay, hardestMaxDelay, DifficultyPercent), absoluteMinDelay + 0.1f);
+            float t        = DifficultyManager.Instance != null ? DifficultyManager.Instance.DifficultyT : 0f;
+            float minDelay = Mathf.Max(Mathf.Lerp(startMinDelay, hardestMinDelay, t), absoluteMinDelay);
+            float maxDelay = Mathf.Max(Mathf.Lerp(startMaxDelay, hardestMaxDelay, t), absoluteMinDelay + 0.1f);
 
             yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));
 
             SpawnRandomObstacle();
         }
-    }
-
-    void UpdateDifficulty()
-    {
-        int score = ScoreManager.Instance != null ? ScoreManager.Instance.GetCurrentScore() : 0;
-        DifficultyPercent = Mathf.Clamp01(score / 300f);
     }
 
     void SpawnRandomObstacle()

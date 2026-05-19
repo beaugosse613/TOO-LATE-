@@ -37,8 +37,9 @@ public class Coin : MonoBehaviour
         if (GameManager.Instance != null && GameManager.Instance.IsGameOver()) return;
         if (_collected) return;
 
-        float score = ScoreManager.Instance != null ? ScoreManager.Instance.GetCurrentScore() : 0f;
-        float speed = 5f + score / 20f;
+        float speed = DifficultyManager.Instance != null
+            ? DifficultyManager.Instance.CurrentSpeed
+            : 5f;
         transform.Translate(Vector2.left * speed * Time.deltaTime);
 
         if (transform.position.x <= destroyX)

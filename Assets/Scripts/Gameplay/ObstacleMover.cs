@@ -13,11 +13,9 @@ public class ObstacleMover : MonoBehaviour
         if (GameManager.Instance != null && GameManager.Instance.IsGameOver())
             return;
 
-        float score = 0f;
-        if (ScoreManager.Instance != null)
-            score = ScoreManager.Instance.GetCurrentScore();
-
-        float currentSpeed = baseSpeed + score / 20f;
+        float currentSpeed = DifficultyManager.Instance != null
+            ? DifficultyManager.Instance.CurrentSpeed
+            : baseSpeed;
         transform.Translate(Vector2.left * currentSpeed * Time.deltaTime);
 
         if (transform.position.x <= destroyX)

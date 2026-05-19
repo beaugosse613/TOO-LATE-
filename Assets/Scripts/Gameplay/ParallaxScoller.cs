@@ -12,8 +12,9 @@ public class ParallaxScroller : MonoBehaviour
         if (GameManager.Instance != null && GameManager.Instance.IsGameOver())
             return;
 
-        float score = ScoreManager.Instance != null ? ScoreManager.Instance.GetCurrentScore() : 0f;
-        float speed = baseSpeed + (score / 20f) * speedScaleFactor;
+        float speed = DifficultyManager.Instance != null
+            ? DifficultyManager.Instance.CurrentSpeed * speedScaleFactor
+            : baseSpeed;
 
         transform.Translate(Vector3.left * speed * Time.deltaTime);
 
