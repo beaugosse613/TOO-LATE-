@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private InputReader inputReader;
     [SerializeField] private float jumpForce = 12.5f;
 
     [Header("Ground Check")]
@@ -26,20 +25,6 @@ public class PlayerController : MonoBehaviour
     private float _jumpBufferTimer;
     private bool _wasGrounded;
     private Coroutine _squashCoroutine;
-
-    void OnEnable()
-    {
-        if (inputReader != null)
-            inputReader.JumpPressed += OnJumpInput;
-    }
-
-    void OnDisable()
-    {
-        if (inputReader != null)
-            inputReader.JumpPressed -= OnJumpInput;
-    }
-
-    private void OnJumpInput() => _jumpBufferTimer = jumpBufferTime;
 
     void Start()
     {
@@ -67,7 +52,14 @@ public class PlayerController : MonoBehaviour
 
         _wasGrounded = grounded;
 
-        _jumpBufferTimer -= Time.deltaTime;
+        bool jumpInput = Input.GetKeyDown(KeyCode.Space)
+                      || Input.GetMouseButtonDown(0)
+                      || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began);
+
+        if (jumpInput)
+            _jumpBufferTimer = jumpBufferTime;
+        else
+            _jumpBufferTimer -= Time.deltaTime;
 
         if (_jumpBufferTimer > 0f && _coyoteTimer > 0f)
         {
