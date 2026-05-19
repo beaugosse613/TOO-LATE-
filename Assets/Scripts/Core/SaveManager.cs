@@ -2,7 +2,20 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
-    public static SaveManager Instance;
+    private static SaveManager _instance;
+
+    public static SaveManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                var go = new GameObject("SaveManager");
+                _instance = go.AddComponent<SaveManager>();
+            }
+            return _instance;
+        }
+    }
 
     private const string KEY_BEST_SCORE    = "BestScore";
     private const string KEY_COINS         = "Coins";
@@ -10,8 +23,8 @@ public class SaveManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null)
-            Instance = this;
+        if (_instance == null)
+            _instance = this;
         else
             Destroy(gameObject);
     }
