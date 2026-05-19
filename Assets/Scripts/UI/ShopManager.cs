@@ -51,6 +51,7 @@ public class ShopManager : MonoBehaviour
 
     void RefreshButtons()
     {
+        if (skins == null) return;
         foreach (SkinEntry entry in skins)
         {
             if (entry.button == null || entry.label == null) continue;
