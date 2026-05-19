@@ -55,6 +55,9 @@ public class GameManager : MonoBehaviour
         if (ObstacleSpawner.Instance != null)
             ObstacleSpawner.Instance.StopSpawning();
 
+        if (CoinSpawner.Instance != null)
+            CoinSpawner.Instance.StopSpawning();
+
         StartCoroutine(GameOverSequence());
     }
 
