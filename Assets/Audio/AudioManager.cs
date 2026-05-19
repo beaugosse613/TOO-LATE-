@@ -16,7 +16,13 @@ public class AudioManager : MonoBehaviour
         if (Instance == null)
             Instance = this;
         else
+        {
             Destroy(gameObject);
+            return;
+        }
+
+        // Apply saved mute state globally
+        AudioListener.volume = PlayerPrefs.GetInt("SoundMuted", 0) == 1 ? 0f : 1f;
     }
 
     public void PlayJump()
