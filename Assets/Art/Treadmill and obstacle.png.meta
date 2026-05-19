@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 3eced40c681f1d0429c763c19e7598f0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2166218891181166146
+    second: Treadmill and obstacle_0
+  - first:
+      213: 5009871515162778210
+    second: Treadmill and obstacle_1
+  - first:
+      213: -5341442758778385689
+    second: Treadmill and obstacle_2
+  - first:
+      213: -5844367981924195164
+    second: Treadmill and obstacle_3
+  - first:
+      213: -4744277478420374457
+    second: Treadmill and obstacle_4
+  - first:
+      213: 2852525604168804253
+    second: Treadmill and obstacle_5
+  - first:
+      213: 2329919219423933008
+    second: Treadmill and obstacle_6
+  - first:
+      213: 8663811342469456828
+    second: Treadmill and obstacle_7
+  - first:
+      213: -3959262935185694190
+    second: Treadmill and obstacle_8
+  - first:
+      213: -7446936921142392935
+    second: Treadmill and obstacle_9
+  - first:
+      213: 1359754521774100859
+    second: Treadmill and obstacle_10
+  - first:
+      213: 8230655206868556892
+    second: Treadmill and obstacle_11
+  - first:
+      213: -1608833020105934058
+    second: Treadmill and obstacle_12
+  - first:
+      213: 7620246733804829447
+    second: Treadmill and obstacle_13
+  - first:
+      213: 4530535508558486341
+    second: Treadmill and obstacle_14
+  - first:
+      213: -4436688793041834881
+    second: Treadmill and obstacle_15
+  - first:
+      213: 4813764579741080434
+    second: Treadmill and obstacle_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Treadmill and obstacle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1183
+        width: 707
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24e089aba94ff0e10800000000000000
+      internalID: 2166218891181166146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_1
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1183
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a10af7993a68540800000000000000
+      internalID: 5009871515162778210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_2
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1180
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ea8eee6c126fd5b0800000000000000
+      internalID: -5341442758778385689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_3
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 1179
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a4edb40942a4eea0800000000000000
+      internalID: -5844367981924195164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_4
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 1174
+        width: 318
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74c1ed605c0f82eb0800000000000000
+      internalID: -4744277478420374457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 487
+        width: 1024
+        height: 690
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9720357ce4369720800000000000000
+      internalID: 2852525604168804253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 147
+        width: 441
+        height: 718
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0527e158f29855020800000000000000
+      internalID: 2329919219423933008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 649
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb364ec538a0c3870800000000000000
+      internalID: 8663811342469456828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_8
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 508
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212e2e7665fdd09c0800000000000000
+      internalID: -3959262935185694190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_9
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 535
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9970196635a27a890800000000000000
+      internalID: -7446936921142392935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_10
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 526
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7193148881ded210800000000000000
+      internalID: 1359754521774100859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_11
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 854
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c9e128d49293270800000000000000
+      internalID: 8230655206868556892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_12
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 858
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61bbaa564e64ca9e0800000000000000
+      internalID: -1608833020105934058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_13
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 415
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70b7445d70e80c960800000000000000
+      internalID: 7620246733804829447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_14
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 415
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54b1ced8a02bfde30800000000000000
+      internalID: 4530535508558486341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_15
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 82
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7ce8cf9c07bd62c0800000000000000
+      internalID: -4436688793041834881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treadmill and obstacle_16
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 82
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b13df716dedc240800000000000000
+      internalID: 4813764579741080434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Treadmill and obstacle_0: 2166218891181166146
+      Treadmill and obstacle_1: 5009871515162778210
+      Treadmill and obstacle_10: 1359754521774100859
+      Treadmill and obstacle_11: 8230655206868556892
+      Treadmill and obstacle_12: -1608833020105934058
+      Treadmill and obstacle_13: 7620246733804829447
+      Treadmill and obstacle_14: 4530535508558486341
+      Treadmill and obstacle_15: -4436688793041834881
+      Treadmill and obstacle_16: 4813764579741080434
+      Treadmill and obstacle_2: -5341442758778385689
+      Treadmill and obstacle_3: -5844367981924195164
+      Treadmill and obstacle_4: -4744277478420374457
+      Treadmill and obstacle_5: 2852525604168804253
+      Treadmill and obstacle_6: 2329919219423933008
+      Treadmill and obstacle_7: 8663811342469456828
+      Treadmill and obstacle_8: -3959262935185694190
+      Treadmill and obstacle_9: -7446936921142392935
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
