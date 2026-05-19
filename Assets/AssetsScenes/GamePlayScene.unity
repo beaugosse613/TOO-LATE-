@@ -1445,6 +1445,7 @@ MonoBehaviour:
   jumpClip: {fileID: 8300000, guid: 3aa778f4faeaba147b96927f9ec43ada, type: 3}
   hitClip: {fileID: 8300000, guid: b701f677750dcb047b497f132ee932d9, type: 3}
   milestoneClip: {fileID: 8300000, guid: 6520fbf3324af6b44809ef0dc5dad198, type: 3}
+  coinClip: {fileID: 0}
 --- !u!82 &770325240
 AudioSource:
   m_ObjectHideFlags: 0
