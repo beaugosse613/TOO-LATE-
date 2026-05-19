@@ -1,21 +1,30 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
-using System.Collections;
 
 public class ShopManager : MonoBehaviour
 {
+    [Serializable]
+    public class SkinEntry
+    {
+        public string          skinName;
+        public int             cost;
+        public Button          button;
+        public TextMeshProUGUI label;
+    }
+
+    [Header("Skins")]
+    [SerializeField] private SkinEntry[] skins;
+
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI coinsText;
     [SerializeField] private TextMeshProUGUI feedbackText;
+    [SerializeField] private Image           skinPreview;
 
-    [Header("Button Labels")]
-    [SerializeField] private TextMeshProUGUI greenButtonLabel;
-    [SerializeField] private TextMeshProUGUI redButtonLabel;
-    [SerializeField] private TextMeshProUGUI goldButtonLabel;
-    [SerializeField] private TextMeshProUGUI purpleButtonLabel;
-
-    private int coins;
+    private string    _equippedSkin;
     private Coroutine _feedbackCoroutine;
 
     void Start()
@@ -23,98 +32,116 @@ public class ShopManager : MonoBehaviour
         if (feedbackText != null)
             feedbackText.gameObject.SetActive(false);
 
+        _equippedSkin = SaveManager.Instance.GetSelectedSkin();
+        RefreshAll();
+    }
+
+    void RefreshAll()
+    {
         RefreshCoins();
-        RefreshButtonLabels();
+        RefreshButtons();
+        RefreshPreview();
     }
 
     void RefreshCoins()
     {
-        coins = SaveManager.Instance.GetCoins();
-
         if (coinsText != null)
-            coinsText.text = "Coins: " + coins;
+            coinsText.text = "Coins: " + SaveManager.Instance.GetCoins();
     }
 
-    void RefreshButtonLabels()
+    void RefreshButtons()
     {
-        RefreshButtonLabel("Green",  25,  greenButtonLabel);
-        RefreshButtonLabel("Red",    50,  redButtonLabel);
-        RefreshButtonLabel("Gold",   100, goldButtonLabel);
-        RefreshButtonLabel("Purple", 250, purpleButtonLabel);
-    }
-
-    void RefreshButtonLabel(string skinName, int cost, TextMeshProUGUI label)
-    {
-        if (label == null) return;
-        bool owned = SaveManager.Instance.GetSkinOwned(skinName);
-        label.text = owned ? "Equip" : $"Buy ({cost})";
-    }
-
-    public void BuyGreen()  { BuySkin("Green",  25,  greenButtonLabel);  }
-    public void BuyRed()    { BuySkin("Red",    50,  redButtonLabel);    }
-    public void BuyGold()   { BuySkin("Gold",   100, goldButtonLabel);   }
-    public void BuyPurple() { BuySkin("Purple", 250, purpleButtonLabel); }
-
-    void BuySkin(string skinName, int cost, TextMeshProUGUI buttonLabel)
-    {
-        coins = SaveManager.Instance.GetCoins();
-
-        bool alreadyOwned = SaveManager.Instance.GetSkinOwned(skinName);
-
-        if (alreadyOwned)
+        foreach (SkinEntry entry in skins)
         {
-            EquipSkin(skinName);
-            Debug.Log($"[Shop] Equipped '{skinName}' (already owned).");
+            if (entry.button == null || entry.label == null) continue;
+
+            bool owned    = SaveManager.Instance.GetSkinOwned(entry.skinName);
+            bool equipped = entry.skinName == _equippedSkin;
+
+            if (equipped)
+            {
+                entry.label.text          = "Equipped";
+                entry.button.interactable = false;
+            }
+            else if (owned)
+            {
+                entry.label.text          = "Equip";
+                entry.button.interactable = true;
+            }
+            else
+            {
+                entry.label.text          = $"Buy ({entry.cost})";
+                entry.button.interactable = true;
+            }
+        }
+    }
+
+    void RefreshPreview()
+    {
+        if (skinPreview != null)
+            skinPreview.color = SkinColors.GetColor(_equippedSkin);
+    }
+
+    // Called by each Button's OnClick — pass the index matching the skins array order
+    public void OnSkinButtonPressed(int index)
+    {
+        if (index < 0 || index >= skins.Length) return;
+
+        SkinEntry entry = skins[index];
+        bool      owned = SaveManager.Instance.GetSkinOwned(entry.skinName);
+
+        if (owned)
+        {
+            Equip(entry.skinName);
             ShowFeedback("Equipped!", Color.cyan);
             return;
         }
 
-        if (coins >= cost)
+        int coins = SaveManager.Instance.GetCoins();
+
+        if (coins >= entry.cost)
         {
-            coins -= cost;
-
-            SaveManager.Instance.SetCoins(coins);
-            SaveManager.Instance.SetSkinOwned(skinName);
-            EquipSkin(skinName);
-
-            if (buttonLabel != null)
-                buttonLabel.text = "Equip";
-
-            Debug.Log($"[Shop] Purchased '{skinName}' for {cost} coins. Coins remaining: {coins}.");
-            ShowFeedback("Bought & Equipped!", Color.green);
+            SaveManager.Instance.SetCoins(coins - entry.cost);
+            SaveManager.Instance.SetSkinOwned(entry.skinName);
+            Equip(entry.skinName);
             RefreshCoins();
+            ShowFeedback("Bought & Equipped!", Color.green);
         }
         else
         {
-            int shortfall = cost - coins;
-            Debug.Log($"[Shop] Cannot buy '{skinName}' — need {shortfall} more coins (have {coins}, cost {cost}).");
-            ShowFeedback($"Need {shortfall} more coins!", Color.red);
+            ShowFeedback($"Need {entry.cost - coins} more coins!", Color.red);
         }
     }
 
-    void EquipSkin(string skinName)
+    void Equip(string skinName)
     {
+        _equippedSkin = skinName;
         SaveManager.Instance.SetSelectedSkin(skinName);
-        Debug.Log($"[Shop] '{skinName}' set as active skin.");
+        RefreshButtons();
+        RefreshPreview();
     }
+
+    // Named wrappers so existing Button.OnClick assignments stay valid
+    public void OnGreenButton()  => OnSkinButtonPressed(0);
+    public void OnRedButton()    => OnSkinButtonPressed(1);
+    public void OnGoldButton()   => OnSkinButtonPressed(2);
+    public void OnPurpleButton() => OnSkinButtonPressed(3);
+
+    public void BackToMenu() => SceneManager.LoadScene("MainMenu");
 
     void ShowFeedback(string message, Color color)
     {
         if (feedbackText == null) return;
-
-        if (_feedbackCoroutine != null)
-            StopCoroutine(_feedbackCoroutine);
-
+        if (_feedbackCoroutine != null) StopCoroutine(_feedbackCoroutine);
         _feedbackCoroutine = StartCoroutine(FeedbackRoutine(message, color));
     }
 
     IEnumerator FeedbackRoutine(string message, Color color)
     {
-        feedbackText.text = message;
+        feedbackText.text  = message;
         feedbackText.color = color;
         feedbackText.gameObject.SetActive(true);
 
-        feedbackText.transform.localScale = Vector3.one * 1.3f;
         float timer = 0f;
         while (timer < 0.2f)
         {
@@ -129,18 +156,11 @@ public class ShopManager : MonoBehaviour
         timer = 0f;
         while (timer < 0.3f)
         {
-            float a = Mathf.Lerp(1f, 0f, timer / 0.3f);
-            feedbackText.color = new Color(color.r, color.g, color.b, a);
+            feedbackText.color = new Color(color.r, color.g, color.b, Mathf.Lerp(1f, 0f, timer / 0.3f));
             timer += Time.unscaledDeltaTime;
             yield return null;
         }
 
         feedbackText.gameObject.SetActive(false);
-    }
-
-    public void BackToMenu()
-    {
-        Debug.Log("[Shop] Returning to Main Menu.");
-        SceneManager.LoadScene("MainMenu");
     }
 }
